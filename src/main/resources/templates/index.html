@@ -47,7 +47,7 @@
         <th:block th:each="weather : ${weathers}">
             <tr>
                 <td th:text="${weather.getDt()}">...</td>
-                <td th:text="${weather.getMainWeather().getTemp()}">...</td>
+                <td th:text="${weather.getMainWeather().getTemp()}" th:style="'color: '+${weather.getMainWeather().getTemp() > 24 ? 'red': 'blue'}">...</td>
                 <td th:text="${weather.getMainWeather().getHumidity()}">...</td>
             </tr>
             <tr>
