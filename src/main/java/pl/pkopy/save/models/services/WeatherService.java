@@ -32,6 +32,7 @@ public class WeatherService {
         try {
             RestTemplate restTemplate = new RestTemplate();
             String cos = restTemplate.getForObject("http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&mode=json&appid=" + apiKey, String.class);
+            System.out.println(cos);
             Object obj = parser.parse(cos);
             JSONObject jsonObject = (JSONObject) obj;
 
