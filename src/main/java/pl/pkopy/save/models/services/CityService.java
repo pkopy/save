@@ -30,7 +30,7 @@ public class CityService {
     public CityService(CityRepository cityRepository){
         this.cityRepository = cityRepository;
     }
-    public List<CityEntity> cos(){
+    public List<CityEntity> insertCitiesToDB(){
 
 
         JSONParser parser = new JSONParser();
@@ -54,6 +54,7 @@ public class CityService {
                 cityEntity.setName(name);
 
                 cityEntities.add(cityEntity);
+                cityRepository.save(cityEntity);
 
 
 
@@ -70,22 +71,12 @@ public class CityService {
 
     }
 
-    public void test(){
-        CityEntity cityEntity = new CityEntity();
+    public List<CityEntity> findCityId(String city){
 
-        cityEntity.setCountry("PK");
-        cityEntity.setName("KKKK");
+        return  cityRepository.findAllByName(city);
 
-        cityRepository.save(cityEntity);
+
     }
 
 
-    public String xxx() {
-        StringBuilder tekst = new StringBuilder();
-        for(CityEntity city : cityEntities){
-            tekst.append("id: " + city.getIdCity() + " name: " + city.getName() + " country: " + city.getCountry() +"\n");
-        }
-
-        return tekst.toString();
-    }
 }
