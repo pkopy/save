@@ -23,13 +23,13 @@
     </style>
     <meta charset="UTF-8">
     <!--<link rel="stylesheet" type="text/css" media="screen" href="../static/style.css" />-->
-    <title>Rejestracja</title>
+    <title>Pogoda 5 dni</title>
 </head>
 <body>
 <div style="text-align: center">
     <!--<h1 th:if="${isLoginCorrect != null}" th:text="${isLoginCorrect? #messages.msg('LoginTemplate.loggedIn'):#messages.msg('LoginTemplate.badData')}" th:style="'color: '+${isLoginCorrect ? 'green': 'red'}"></h1>-->
     <form method="post" action="/" >
-        Tytuł: <input type="text" th:name="city" >
+        Miasto: <input type="text" th:name="city" placeholder="Wpisz miasto">
 
         <!--<span th:if="${#fields.hasErrors('password')}" th:errors ="*{password}"></span><br>-->
         <input type="submit" value="Wyślij">
